@@ -4,9 +4,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 tickers = ["SPY", "TLT", "GLD"]
-
 data = yf.download(tickers, start="2015-01-01")["Close"]
 returns = data.pct_change().dropna()
+
 weights = np.array([0.5, 0.3, 0.2])
 portfolio_returns = returns.dot(weights)
 annual_return = np.mean(portfolio_returns) * 252
@@ -19,18 +19,24 @@ print("Sharpe Ratio:", sharpe_ratio)
 
 cumulative_returns = (1 + portfolio_returns).cumprod()
 
-plt.figure(figsize=(10,5))
-plt.plot(cumulative_returns)
-plt.title("Portfolio Performance")
-plt.xlabel("Date")
-plt.ylabel("Cumulative Returns")
-plt.show()
-
-# maximum drawdown
 rolling_max = cumulative_returns.cummax()
 drawdown = cumulative_returns / rolling_max - 1
-
 max_drawdown = drawdown.min()
-
 print("Maximum Drawdown:", max_drawdown)
 
+spy_returns = returns["SPY"]
+spy_cumulative = (1 + spy_returns).cumprod()
+
+plt.figure(figsize=(10,5))
+plt.plot(cumulative_returns, label="Portfolio")
+plt.plot(spy_cumulative, label="S&P500")
+plt.title("Portfolio vs Market")
+plt.xlabel("Date")
+plt.ylabel("Cumulative Returns")
+plt.legend()
+plt.show()
+
+rolling_max = cumulative_returns.cummax()
+drawdown = cumulative_returns / rolling_max - 1
+max_drawdown = drawdown.min()
+print("Maximum Drawdown:", max_drawdown)
