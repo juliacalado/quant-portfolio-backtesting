@@ -1,39 +1,34 @@
-# Quant Portfolio Backtesting
+# Portfolio Backtesting in Python
 
-This project implements a simple quantitative portfolio backtesting framework using Python and historical financial data.
+A simple Python project to simulate a multi-asset portfolio and analyze its performance using historical market data.
 
-## Overview
+## Portfolio
 
-The model downloads market data, computes portfolio returns, and evaluates risk metrics commonly used in quantitative finance.
+We track three assets:
 
-## Features
+- **SPY** – US Stocks (S&P 500 ETF)  
+- **TLT** – US Treasury Bonds  
+- **GLD** – Gold  
 
-- Download historical financial data
-- Compute daily returns
-- Portfolio performance simulation
-- Risk metrics:
-  - Annual return
-  - Volatility
-  - Sharpe ratio
-  - Maximum drawdown
-- Performance visualization
+## What it does
 
-## Technologies
+- Downloads historical price data using `yfinance`  
+- Calculates daily returns and portfolio performance  
+- Computes key metrics:  
+  - Annual return  
+  - Volatility  
+  - Sharpe ratio  
+  - Maximum drawdown  
+- Compares the portfolio with the S&P 500  
+- Plots cumulative returns and drawdowns  
 
-- Python
-- pandas
-- numpy
-- matplotlib
-- yfinance
+## Tools
 
-## Example Portfolio
+- Python  
+- pandas, NumPy  
+- matplotlib  
+- yfinance  
 
-The project simulates a multi-asset portfolio composed of:
+## Why it’s useful
 
-- SPY (US equities)
-- TLT (US treasury bonds)
-- GLD (Gold)
-
-## Applications
-
-Quantitative finance, portfolio optimization, systematic investment strategies and financial data analysis.
+This project is a simple example of how you can test investment ideas, analyze risk, and compare performance with the market. 
