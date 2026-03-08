@@ -28,7 +28,4 @@ We track three assets:
 - pandas, NumPy  
 - matplotlib  
 - yfinance  
-
-## Why it’s useful
-
-This project is a simple example of how you can test investment ideas, analyze risk, and compare performance with the market. 
+ 
