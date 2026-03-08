@@ -1,6 +1,6 @@
 # Portfolio Backtesting in Python
 
-A simple Python project to simulate a multi-asset portfolio and analyze its performance using historical market data.
+Python project to simulate a multi-asset portfolio and analyze its performance using historical market data.
 
 ## Portfolio
 
